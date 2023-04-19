@@ -66,4 +66,4 @@ inputs:
     required: false
 runs:
   using: docker
-  image: docker://ghcr.io/SilvertipSoftware/helm
+  image: docker://ghcr.io/silvertipsoftware/helm
