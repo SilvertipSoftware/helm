@@ -31,7 +31,7 @@ payload if the action was triggered by a deployment.
   JSON encoded array or a string.
 - `secrets`: Secret variables to include in value file interpolation. Expects a
   JSON encoded map.
-- `helm`: Helm binary to execute, one of: [`helm`, `helm3`].
+- `helm`: Helm binary to execute, one of: [`helm3`].
 - `version`: Version of the app, usually commit sha works here.
 - `timeout`: specify a timeout for helm deployment
 - `repo`: Helm chart repository to be added.
@@ -46,8 +46,7 @@ action will execute a `helm delete $service`
 
 #### Versions
 
-- `helm`: v2.17.0
-- `helm3`: v3.8.1
+- `helm3`: v3.11.3
 
 ### Environment
 
@@ -75,7 +74,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'silvertipsoftware/helm@v1.2'
       with:
         release: 'nginx'
         namespace: 'default'
@@ -116,7 +115,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'silvertipsoftware/helm@v1.2'
       with:
         release: 'nginx'
         track: canary
@@ -148,7 +147,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'silvertipsoftware/helm@v1.2'
       with:
         # Task remove means to remove the helm release.
         task: 'remove'
@@ -178,7 +177,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'silvertipsoftware/helm@v1.2'
       with:
         release: 'nginx'
         namespace: 'default'
